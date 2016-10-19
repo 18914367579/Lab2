@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+    "http://struts.apache.org/dtds/struts-2.0.dtd">  
+  
+<struts>  
+    <package name="LibrarySystem" extends="struts-default">    
+     
+  		<action name="addBook" class="com.mystruts.acion.BookAction" method="addBook">
+        	<result name="success">/addBook.jsp</result>  
+        </action>   
+  
+        <action name="addAuthor" class="com.mystruts.acion.AuthorAction" method="addAuthor">
+        	<result name="success">/addBook.jsp</result>  
+        </action>
+        
+        <action name="passISBN" class="com.mystruts.acion.BookAction" method="passISBN">
+        	<result name="success" >/updateBook.jsp</result>  
+        </action>
+        
+        <action name="updateBook" class="com.mystruts.acion.BookAction" method="updateBook">
+        	<result name="success">/viewBook.jsp</result>  
+        </action>
+        
+        <action name="deleBook" class="com.mystruts.acion.BookAction" method="deleBook">
+        	<result name="success">/viewBook.jsp</result>  
+        </action>
+        
+        <action name="passID" class="com.mystruts.acion.AuthorAction" method="passID">
+        	<result name="success">/Search.jsp</result>  
+       		<result name="fail">/NoAuthor.jsp</result>
+        </action>
+        
+        <action name="passAuthorID" class="com.mystruts.acion.AuthorAction" method="passAuthorID">
+        	<result name="success" >/AuthorInf.jsp</result>  
+        </action>
+          
+        <action name="checkID" class="com.mystruts.acion.AuthorAction" method="checkID">
+        	<result name="exsist" >/addBook.jsp</result> 
+        	<result name="none" >/addAuthor.jsp</result> 
+        </action>  
+          
+    </package>  
+</struts>
